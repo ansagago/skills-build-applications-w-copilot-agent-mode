@@ -13,8 +13,10 @@ export function getItems(payload) {
 }
 
 export async function fetchItems(resource) {
-  const endpoint = resource.startsWith('/api/') ? resource : `/api/${resource}/`
-  const response = await fetch(`${API_BASE_URL}${endpoint}`)
+  const endpoint = resource.startsWith('http')
+    ? resource
+    : `${API_BASE_URL}${resource.startsWith('/api/') ? resource : `/api/${resource}/`}`
+  const response = await fetch(endpoint)
   const payload = await response.json()
   if (!response.ok) throw new Error(payload.error || `Could not load ${resource}`)
   return getItems(payload)
