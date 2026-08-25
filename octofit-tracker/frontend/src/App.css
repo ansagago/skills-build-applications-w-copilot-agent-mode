@@ -182,3 +182,128 @@
     border-right-color: var(--border);
   }
 }
+
+.app-header {
+  background: #173f3a;
+  border-bottom: 4px solid #e3a84b;
+}
+
+.app-header .navbar-brand,
+.app-header .nav-link {
+  color: #fffdf8;
+}
+
+.app-header .navbar-brand {
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.app-header .navbar-brand img {
+  border-radius: 50%;
+}
+
+.app-header .nav-link {
+  border-radius: 0;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.app-header .nav-link:hover,
+.app-header .nav-link.active {
+  background: #e3a84b;
+  color: #173f3a;
+}
+
+.eyebrow {
+  color: #bf6d3d;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem;
+}
+
+.dashboard-intro {
+  max-width: 700px;
+  padding: 7rem 0 10rem;
+}
+
+.dashboard-intro h1,
+.page-title {
+  color: #173f3a;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.dashboard-intro h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95;
+  margin: 0 0 1.5rem;
+}
+
+.lead,
+.page-description {
+  color: #53635e;
+  max-width: 560px;
+}
+
+.dashboard-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.page-description {
+  margin-bottom: 2.5rem;
+}
+
+.data-card {
+  background: #fffdf8;
+  border: 1px solid #ded8ca;
+  border-left: 5px solid #e3a84b;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.data-card h2 {
+  color: #173f3a;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0 0.35rem;
+}
+
+.data-card p {
+  color: #53635e;
+}
+
+.tag,
+.difficulty {
+  background: #e8f0e8;
+  color: #286055;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.55rem;
+  text-transform: uppercase;
+}
+
+.difficulty { background: #f8e4c4; color: #8a5525; }
+.member-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.avatar { background: #173f3a; border-radius: 50%; color: #fffdf8; display: inline-grid; font-weight: 700; height: 2.5rem; place-items: center; width: 2.5rem; }
+.empty-state { color: #53635e; font-style: italic; padding: 1rem 0; }
+.table { --bs-table-bg: #fffdf8; --bs-table-border-color: #ded8ca; }
+.table th { color: #53635e; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+@media (max-width: 767px) {
+  .app-header .container { align-items: flex-start; flex-direction: column; gap: 0.75rem; }
+  .app-header .nav { flex-wrap: wrap; }
+  .dashboard-intro { padding: 4rem 0 7rem; }
+}
