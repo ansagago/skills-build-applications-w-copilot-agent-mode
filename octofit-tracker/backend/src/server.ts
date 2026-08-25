@@ -11,6 +11,21 @@ const apiBaseUrl = codespaceName
 
 app.use(express.json())
 
+app.use((request, response, next) => {
+  const origin = request.headers.origin
+  if (origin && (origin === 'http://localhost:5173' || origin.endsWith('-5173.app.github.dev'))) {
+    response.setHeader('Access-Control-Allow-Origin', origin)
+    response.setHeader('Vary', 'Origin')
+  }
+  response.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
+  response.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+  if (request.method === 'OPTIONS') {
+    response.sendStatus(204)
+    return
+  }
+  next()
+})
+
 app.get('/api/health', (_request, response) => {
   response.json({ status: 'ok' })
 })
