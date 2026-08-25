@@ -16,3 +16,6 @@ Add Bootstrap CSS import at the top of `octofit-tracker/frontend/src/main.jsx`.
 ## Images
 
 Use `docs/octofitapp-small.png` for the app logo.
+git add octofit-tracker/frontend
+git commit -m "fix: expose frontend API endpoints"
+git push origin build-octofit-app
